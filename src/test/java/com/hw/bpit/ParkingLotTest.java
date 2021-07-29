@@ -11,4 +11,14 @@ public class ParkingLotTest {
         Token token = parkingLot.park(car);
         Assert.assertNotNull(token);
     }
+
+    @Test
+    public void should_return_a_car_when_pick_given_a_token() {
+        ParkingLot parkingLot = new ParkingLot();
+        Car car = new Car();
+        Token token = parkingLot.park(car);
+
+        Car pickedCar = parkingLot.pick(token);
+        Assert.assertEquals(car, pickedCar);
+    }
 }
