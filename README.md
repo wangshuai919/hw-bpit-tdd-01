@@ -17,4 +17,7 @@ Given Token、Parkinglot
 When pick
 Then return a car
 
-
+---
+Given Invalid Token 
+When pick
+Then return CarNotExistException

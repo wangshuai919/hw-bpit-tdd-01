@@ -21,6 +21,9 @@ public class ParkingLot {
     }
 
     public Car pick(Token token) {
+        if (!tokenMap.containsKey(token)) {
+            throw new CarNotExistException();
+        }
         return tokenMap.remove(token);
     }
 }

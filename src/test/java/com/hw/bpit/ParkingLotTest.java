@@ -28,4 +28,12 @@ public class ParkingLotTest {
         Car pickedCar = parkingLot.pick(token);
         Assert.assertEquals(car, pickedCar);
     }
+
+    @Test(expected = CarNotExistException.class)
+    public void should_return_car_not_exist_exception_when_pick_given_invalid_token() {
+        ParkingLot parkingLot = new ParkingLot(1);
+        parkingLot.park(new Car());
+
+        parkingLot.pick(new Token());
+    }
 }
