@@ -6,6 +6,11 @@ Given Parkinglot、Car
 When park 
 Then return Token
 
+---
+Given Full ParkingLot 、Car
+When park
+Then return SpaceFullException
+
 ### 取车
 --- 
 Given Token、Parkinglot
